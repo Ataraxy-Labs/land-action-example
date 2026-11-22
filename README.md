@@ -6,3 +6,4 @@ Open a pull request that edits `shop/receipt.py` and only the receipt tests run.
 
 See `.github/workflows/land.yml` for the whole setup.
 
+
