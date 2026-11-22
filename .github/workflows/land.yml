@@ -1,0 +1,16 @@
+name: land
+on: [pull_request, push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pytest
+      - uses: Ataraxy-Labs/land-action@v1
+        with:
+          run: |
+            pricing: python -m pytest -q -p no:cacheprovider tests/test_pricing.py
+            receipt: python -m pytest -q -p no:cacheprovider tests/test_receipt.py
+            catalog: python -m pytest -q -p no:cacheprovider tests/test_catalog.py
