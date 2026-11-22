@@ -1,2 +1,2 @@
-def line(name, amount):
-    return f"{name}: ${amount:.2f}"
+def line(name, amount, currency="$"):
+    return f"{name}: {currency}{amount:.1f}"
