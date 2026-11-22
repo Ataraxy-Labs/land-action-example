@@ -14,3 +14,12 @@ jobs:
             pricing: python -m pytest -q -p no:cacheprovider tests/test_pricing.py
             receipt: python -m pytest -q -p no:cacheprovider tests/test_receipt.py
             catalog: python -m pytest -q -p no:cacheprovider tests/test_catalog.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: land-debug
+          path: |
+            ${{ runner.temp }}/land-state
+            ${{ runner.temp }}/land-out.json
+            ${{ runner.temp }}/land-units.json
+          include-hidden-files: true
