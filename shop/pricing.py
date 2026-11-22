@@ -1,4 +1,4 @@
-TAX_RATES = {"CA": 0.0725, "NY": 0.04, "TX": 0.0625}
+TAX_RATES = {"CA": 0.0725, "NY": 0.05, "TX": 0.0625}
 
 
 def subtotal(items):
