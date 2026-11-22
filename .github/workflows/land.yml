@@ -8,9 +8,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install pytest
-      - uses: Ataraxy-Labs/land-action@v1
+      - uses: Ataraxy-Labs/land-action@speedups
         with:
+          split: files
           run: |
-            pricing: python -m pytest -q -p no:cacheprovider tests/test_pricing.py
-            receipt: python -m pytest -q -p no:cacheprovider tests/test_receipt.py
-            catalog: python -m pytest -q -p no:cacheprovider tests/test_catalog.py
+            tests: python -m pytest -q -p no:cacheprovider tests
