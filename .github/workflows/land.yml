@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install pytest
-      - uses: Ataraxy-Labs/land-action@speedups
+      - uses: Ataraxy-Labs/land-action@v1
         with:
           split: files
           run: |
